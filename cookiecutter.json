@@ -11,7 +11,7 @@
   "python_version": "3.13",
   "include_instrument": ["yes", "no"],
   "include_controller": ["yes", "no"],
-  "instrument_class_name": "{{ cookiecutter.project_name.replace(' ', '').replace('-', '').replace('_', '') }}",
-  "controller_class_name": "{{ cookiecutter.project_name.replace(' ', '').replace('-', '').replace('_', '') }}Controller",
+  "__instrument_class_name": "{{ cookiecutter.project_name.replace(' ', '').replace('-', '').replace('_', '') }}",
+  "__controller_class_name": "{{ cookiecutter.project_name.replace(' ', '').replace('-', '').replace('_', '') }}Controller",
   "year": "{% now 'utc', '%Y' %}"
 }

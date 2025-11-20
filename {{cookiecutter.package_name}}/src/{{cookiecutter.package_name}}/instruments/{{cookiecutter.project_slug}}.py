@@ -1,11 +1,11 @@
 # SPDX-FileCopyrightText: {{ cookiecutter.year }}-present {{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>
 # SPDX-License-Identifier: {{ cookiecutter.license }}
-"""{{ cookiecutter.instrument_class_name }} instrument implementation."""
+"""{{ cookiecutter.__instrument_class_name }} instrument implementation."""
 
 from chimera.core.chimeraobject import ChimeraObject
 
 
-class {{ cookiecutter.instrument_class_name }}(ChimeraObject):
+class {{ cookiecutter.__instrument_class_name }}(ChimeraObject):
     """{{ cookiecutter.project_short_description }}"""
 
     __config__ = {"param1": "a string parameter"}

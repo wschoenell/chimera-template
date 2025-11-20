@@ -24,7 +24,7 @@ Add the following to your `chimera.config` file:
 ```yaml
 instrument:
     name: {{ cookiecutter.project_slug }}
-    type: {{ cookiecutter.instrument_class_name }}
+    type: {{ cookiecutter.__instrument_class_name }}
 ```
 {% endif %}
 
@@ -32,7 +32,7 @@ instrument:
 ```yaml
 controller:
     name: {{ cookiecutter.project_slug }}
-    type: {{ cookiecutter.controller_class_name }}
+    type: {{ cookiecutter.__controller_class_name }}
 ```
 {% endif %}
 
