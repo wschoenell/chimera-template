@@ -12,6 +12,15 @@ requires-python = ">=3.13"
 dependencies = [
     "chimera",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "cookiecutter>=2.6",
+    "tomli>=2.0; python_version<'3.11'",
+    "build>=1.0",
+]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

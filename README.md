@@ -175,3 +175,22 @@ For more information:
 
 - Chimera discussion list: https://groups.google.com/forum/#!forum/chimera-discuss
 - GitHub: https://github.com/astroufsc/chimera-template
+
+## Development & Testing
+
+This template itself is tested to ensure generated projects are valid and working.
+
+### Running Template Tests
+
+```bash
+# Install test dependencies
+uv pip install -e ".[dev]"
+
+# Run tests
+uv run pytest
+
+# Run with verbose output
+uv run pytest -v
+```
+
+See `tests/README.md` for more information about the test suite.
