@@ -32,7 +32,7 @@ if __name__ == "__main__":
     print("=" * 60)
     print()
     print("Next steps:")
-    print("  1. cd {{ cookiecutter.package_name }}")
+    print("  1. cd {{ cookiecutter.project_slug }}")
     print("  2. git init")
     print("  3. uv sync")
     print("  4. uv run pre-commit install --install-hooks")
