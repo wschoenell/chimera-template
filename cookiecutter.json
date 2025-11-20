@@ -1,0 +1,17 @@
+{
+  "project_name": "My Chimera Plugin",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "package_name": "chimera_{{ cookiecutter.project_slug }}",
+  "project_short_description": "A Chimera observatory control system plugin",
+  "author_name": "Your Name",
+  "author_email": "your.email@example.com",
+  "github_username": "yourusername",
+  "version": "0.1.0",
+  "license": ["GPL-2.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"],
+  "python_version": "3.13",
+  "include_instrument": ["yes", "no"],
+  "include_controller": ["yes", "no"],
+  "instrument_class_name": "{{ cookiecutter.project_name.replace(' ', '').replace('-', '').replace('_', '') }}",
+  "controller_class_name": "{{ cookiecutter.project_name.replace(' ', '').replace('-', '').replace('_', '') }}Controller",
+  "year": "{% now 'utc', '%Y' %}"
+}

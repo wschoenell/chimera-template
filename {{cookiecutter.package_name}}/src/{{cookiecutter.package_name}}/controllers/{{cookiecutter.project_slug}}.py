@@ -1,12 +1,12 @@
-# SPDX-FileCopyrightText: 2024-present William Schoenell <wschoenell@gmail.com>
-# SPDX-License-Identifier: GPL-2.0-or-later
-"""Example controller implementation."""
+# SPDX-FileCopyrightText: {{ cookiecutter.year }}-present {{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>
+# SPDX-License-Identifier: {{ cookiecutter.license }}
+"""{{ cookiecutter.controller_class_name }} controller implementation."""
 
 from chimera.core.chimeraobject import ChimeraObject
 
 
-class ControllerExample(ChimeraObject):
-    """Example controller class demonstrating basic chimera controller structure."""
+class {{ cookiecutter.controller_class_name }}(ChimeraObject):
+    """{{ cookiecutter.project_short_description }}"""
 
     __config__ = {"param1": "a string parameter"}
 

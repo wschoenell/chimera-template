@@ -1,12 +1,12 @@
-# SPDX-FileCopyrightText: 2024-present William Schoenell <wschoenell@gmail.com>
-# SPDX-License-Identifier: GPL-2.0-or-later
-"""Example instrument implementation."""
+# SPDX-FileCopyrightText: {{ cookiecutter.year }}-present {{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>
+# SPDX-License-Identifier: {{ cookiecutter.license }}
+"""{{ cookiecutter.instrument_class_name }} instrument implementation."""
 
 from chimera.core.chimeraobject import ChimeraObject
 
 
-class InstrumentExample(ChimeraObject):
-    """Example instrument class demonstrating basic chimera instrument structure."""
+class {{ cookiecutter.instrument_class_name }}(ChimeraObject):
+    """{{ cookiecutter.project_short_description }}"""
 
     __config__ = {"param1": "a string parameter"}
 

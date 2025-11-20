@@ -1,63 +1,177 @@
-chimera-template plugin
-=======================
+# Chimera Plugin Template
 
-This is a template plugin for the chimera observatory control system
-https://github.com/astroufsc/chimera.
+A [Cookiecutter](https://github.com/cookiecutter/cookiecutter) template for creating [Chimera](https://github.com/astroufsc/chimera) observatory control system plugins.
 
-Usage
------
+This template provides a modern, fully-configured project structure following current Python best practices, including:
 
-Rename chimera_template for your plugin name. It is important that the plugin
-name must start with chimera\_ to be found by chimera. Instruments and
-controllers must follow the standard ``chimera_(plugin_name)/(instruments|controllers)/(plugin).py``
+- **Modern src/ layout** for better packaging
+- **Type hints** on all method definitions
+- **Ruff** for linting and formatting
+- **Pre-commit hooks** for automated code quality checks
+- **SPDX license identifiers** for clear licensing
+- **Comprehensive documentation** structure
+- **Test structure** ready to use
 
-The class inside ``(plugin).py`` should be named Plugin (with CamelCase letters).
+## Requirements
 
-For more info: https://github.com/astroufsc/chimera/blob/master/docs/site/chimerafordevs.rst#chimera-objects
+- Python 3.13+
+- [uv](https://docs.astral.sh/uv/) (recommended) or pip
+- [Cookiecutter](https://github.com/cookiecutter/cookiecutter)
 
+## Quick Start
 
-Installation
-------------
+### Install Cookiecutter
 
-Installation instructions. Dependencies, etc...
+```bash
+# Using uv (recommended)
+uv tool install cookiecutter
 
-::
+# Or using pip
+pip install cookiecutter
+```
 
-   pip install -U chimera_template
+### Create a New Plugin
 
-or
+```bash
+cookiecutter gh:astroufsc/chimera-template
+```
 
-::
+Or if you've cloned this repository locally:
 
-    pip install -U git+https://github.com/astroufsc/chimera-template.git
+```bash
+cookiecutter /path/to/chimera-template
+```
 
+### Follow the Prompts
 
-Configuration Example
----------------------
+You'll be asked to provide:
 
-Here goes an example of the configuration to be added on ``chimera.config`` file.
+- **project_name**: Human-readable name (e.g., "My Telescope Controller")
+- **project_slug**: URL/import-friendly version (auto-generated)
+- **package_name**: Python package name with `chimera_` prefix (auto-generated)
+- **project_short_description**: Brief description of your plugin
+- **author_name**: Your name
+- **author_email**: Your email address
+- **github_username**: Your GitHub username
+- **version**: Initial version (default: 0.1.0)
+- **license**: Choose from GPL-2.0-or-later, MIT, BSD-3-Clause, Apache-2.0
+- **python_version**: Minimum Python version (default: 3.13)
+- **include_instrument**: Include an instrument template? (yes/no)
+- **include_controller**: Include a controller template? (yes/no)
 
-::
+### Initialize Your New Plugin
 
-    instrument:
-        name: model
-        type: Example
+After generation, follow these steps:
 
+```bash
+cd your-package-name
+git init
+uv sync
+uv run pre-commit install --install-hooks
+git add .
+git commit -m "Initial commit"
+```
 
-Tested Hardware (for instruments)
----------------------------------
+## Project Structure
 
-This plugin was tested on these hardware:
+The generated project will have this structure:
 
-* Hardware example 1, model 2
-* Hardware example 2, model 3
+```
+your-package-name/
+├── src/
+│   └── chimera_your_plugin/
+│       ├── __init__.py
+│       ├── instruments/          # If included
+│       │   ├── __init__.py
+│       │   └── your_plugin.py
+│       └── controllers/          # If included
+│           ├── __init__.py
+│           └── your_plugin.py
+├── tests/
+│   ├── __init__.py
+│   └── chimera_your_plugin/
+│       └── __init__.py
+├── pyproject.toml
+├── README.md
+├── .pre-commit-config.yaml
+└── .gitignore
+```
 
+## Development Workflow
 
-Contact
--------
+### Code Quality
 
-For more information, contact us on chimera's discussion list:
-https://groups.google.com/forum/#!forum/chimera-discuss
+The template includes pre-configured tools:
 
-Bug reports and patches are welcome and can be sent over our GitHub page:
-https://github.com/astroufsc/chimera-template/
+```bash
+# Run linter
+uv run ruff check
+
+# Auto-fix issues
+uv run ruff check --fix
+
+# Format code
+uv run ruff format
+
+# Run pre-commit on all files
+uv run pre-commit run --all-files
+```
+
+### Testing
+
+```bash
+# Run tests (when you add them)
+uv run pytest
+```
+
+## Features
+
+### Modern Python Practices
+
+- **Type annotations**: All methods include type hints
+- **f-strings**: Modern string formatting throughout
+- **super()**: Modern inheritance patterns
+- **Docstrings**: Google-style docstrings for all classes and methods
+
+### Code Quality Tools
+
+- **Ruff**: Fast Python linter and formatter
+- **Pre-commit**: Automated checks before each commit
+- **SPDX identifiers**: Clear license and copyright information
+
+### Project Structure
+
+- **src/ layout**: Modern packaging best practice
+- **tests/ directory**: Parallel structure for test organization
+- **pyproject.toml**: Modern Python project configuration (no setup.py)
+
+## Chimera Plugin Development
+
+For detailed information about developing Chimera plugins:
+
+- [Chimera Documentation](https://github.com/astroufsc/chimera)
+- [Chimera Developer Guide](https://github.com/astroufsc/chimera/blob/master/docs/site/chimerafordevs.rst)
+
+### Important Notes
+
+- Plugin package names **must** start with `chimera_` to be discovered by Chimera
+- Instrument files go in `src/chimera_yourplugin/instruments/`
+- Controller files go in `src/chimera_yourplugin/controllers/`
+- Class names should use CamelCase (e.g., `MyTelescopeController`)
+
+## Contributing to This Template
+
+Found a bug or have a suggestion? Please open an issue or submit a pull request!
+
+## License
+
+This template is licensed under GPL-2.0-or-later.
+
+Generated projects can use any license selected during generation.
+
+## Contact
+
+For more information:
+
+- Chimera discussion list: https://groups.google.com/forum/#!forum/chimera-discuss
+- GitHub: https://github.com/astroufsc/chimera-template
