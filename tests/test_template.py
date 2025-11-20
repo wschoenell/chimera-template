@@ -45,7 +45,7 @@ def test_cookiecutter_template_basic(template_dir, temp_output_dir):
     assert result.returncode == 0, f"Cookiecutter failed: {result.stderr}"
 
     # Check that the project was created
-    project_dir = temp_output_dir / "my-chimera-plugin"
+    project_dir = temp_output_dir / "chimera-my-chimera-plugin"
     assert project_dir.exists(), "Project directory was not created"
     assert project_dir.is_dir(), "Project path is not a directory"
 
@@ -63,7 +63,7 @@ def test_generated_project_structure(template_dir, temp_output_dir):
         check=True,
     )
 
-    project_dir = temp_output_dir / "my-chimera-plugin"
+    project_dir = temp_output_dir / "chimera-my-chimera-plugin"
 
     # Check expected files exist
     expected_files = [
@@ -95,7 +95,7 @@ def test_generated_project_with_instrument(template_dir, temp_output_dir):
         check=True,
     )
 
-    project_dir = temp_output_dir / "my-chimera-plugin"
+    project_dir = temp_output_dir / "chimera-my-chimera-plugin"
 
     # Check instrument files exist
     instrument_dir = project_dir / "src/chimera_my_chimera_plugin/instruments"
@@ -118,7 +118,7 @@ def test_generated_project_with_controller(template_dir, temp_output_dir):
         check=True,
     )
 
-    project_dir = temp_output_dir / "my-chimera-plugin"
+    project_dir = temp_output_dir / "chimera-my-chimera-plugin"
 
     # Check controller files exist
     controller_dir = project_dir / "src/chimera_my_chimera_plugin/controllers"
@@ -141,7 +141,7 @@ def test_generated_project_without_instrument(template_dir, temp_output_dir):
         check=True,
     )
 
-    project_dir = temp_output_dir / "my-chimera-plugin"
+    project_dir = temp_output_dir / "chimera-my-chimera-plugin"
 
     # Check instrument directory does not exist
     instrument_dir = project_dir / "src/chimera_my_chimera_plugin/instruments"
@@ -162,7 +162,7 @@ def test_generated_project_without_controller(template_dir, temp_output_dir):
         check=True,
     )
 
-    project_dir = temp_output_dir / "my-chimera-plugin"
+    project_dir = temp_output_dir / "chimera-my-chimera-plugin"
 
     # Check controller directory does not exist
     controller_dir = project_dir / "src/chimera_my_chimera_plugin/controllers"
@@ -182,7 +182,7 @@ def test_generated_pyproject_toml_valid(template_dir, temp_output_dir):
         check=True,
     )
 
-    project_dir = temp_output_dir / "my-chimera-plugin"
+    project_dir = temp_output_dir / "chimera-my-chimera-plugin"
     pyproject_path = project_dir / "pyproject.toml"
 
     # Try to parse the TOML file
@@ -218,7 +218,7 @@ def test_generated_project_with_custom_values(template_dir, temp_output_dir):
         check=True,
     )
 
-    project_dir = temp_output_dir / "my-test-plugin"
+    project_dir = temp_output_dir / "chimera-my-test-plugin"
     assert project_dir.exists()
 
     pyproject_path = project_dir / "pyproject.toml"
@@ -245,7 +245,7 @@ def test_generated_python_files_have_spdx_headers(template_dir, temp_output_dir)
         check=True,
     )
 
-    project_dir = temp_output_dir / "my-chimera-plugin"
+    project_dir = temp_output_dir / "chimera-my-chimera-plugin"
 
     # Check SPDX headers in various files
     python_files = [
@@ -279,13 +279,13 @@ def test_generated_readme_has_correct_content(template_dir, temp_output_dir):
         check=True,
     )
 
-    project_dir = temp_output_dir / "my-test-plugin"
+    project_dir = temp_output_dir / "chimera-my-test-plugin"
     readme_path = project_dir / "README.md"
 
     content = readme_path.read_text()
     assert "My Test Plugin" in content
     assert "A test plugin for Chimera" in content
-    assert "my-test-plugin" in content
+    assert "chimera-my-test-plugin" in content
 
 
 def test_no_jinja2_syntax_in_generated_files(template_dir, temp_output_dir):
@@ -303,7 +303,7 @@ def test_no_jinja2_syntax_in_generated_files(template_dir, temp_output_dir):
         check=True,
     )
 
-    project_dir = temp_output_dir / "my-chimera-plugin"
+    project_dir = temp_output_dir / "chimera-my-chimera-plugin"
 
     # Check all Python files
     for py_file in project_dir.rglob("*.py"):
@@ -332,7 +332,7 @@ def test_generated_project_installs_successfully(template_dir, temp_output_dir):
         check=True,
     )
 
-    project_dir = temp_output_dir / "my-chimera-plugin"
+    project_dir = temp_output_dir / "chimera-my-chimera-plugin"
 
     # Try to build the package (this validates pyproject.toml structure)
     result = subprocess.run(
