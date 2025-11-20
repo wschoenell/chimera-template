@@ -13,7 +13,7 @@ pip install -U {{ cookiecutter.package_name }}
 Or install from source:
 
 ```bash
-pip install -U git+https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.package_name }}.git
+pip install -U git+https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git
 ```
 
 ## Configuration Example
@@ -42,8 +42,8 @@ controller:
 
 ```bash
 # Clone the repository
-git clone https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.package_name }}.git
-cd {{ cookiecutter.package_name }}
+git clone https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git
+cd {{ cookiecutter.project_slug }}
 
 # Install dependencies
 uv sync
@@ -85,4 +85,4 @@ For more information, contact us on chimera's discussion list:
 https://groups.google.com/forum/#!forum/chimera-discuss
 
 Bug reports and patches are welcome and can be sent over our GitHub page:
-https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.package_name }}
+https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
