@@ -101,7 +101,7 @@ def test_generated_project_with_instrument(template_dir, temp_output_dir):
     instrument_dir = project_dir / "src/chimera_my_chimera_plugin/instruments"
     assert instrument_dir.exists(), "Instruments directory does not exist"
     assert (instrument_dir / "__init__.py").exists()
-    assert (instrument_dir / "my_chimera_plugin.py").exists()
+    assert (instrument_dir / "mychimeraplugininstrument.py").exists()
 
 
 def test_generated_project_with_controller(template_dir, temp_output_dir):
@@ -124,7 +124,7 @@ def test_generated_project_with_controller(template_dir, temp_output_dir):
     controller_dir = project_dir / "src/chimera_my_chimera_plugin/controllers"
     assert controller_dir.exists(), "Controllers directory does not exist"
     assert (controller_dir / "__init__.py").exists()
-    assert (controller_dir / "my_chimera_plugin.py").exists()
+    assert (controller_dir / "mychimeraplugincontroller.py").exists()
 
 
 def test_generated_project_without_instrument(template_dir, temp_output_dir):
@@ -251,9 +251,9 @@ def test_generated_python_files_have_spdx_headers(template_dir, temp_output_dir)
     python_files = [
         "src/chimera_my_chimera_plugin/__init__.py",
         "src/chimera_my_chimera_plugin/instruments/__init__.py",
-        "src/chimera_my_chimera_plugin/instruments/my_chimera_plugin.py",
+        "src/chimera_my_chimera_plugin/instruments/mychimeraplugininstrument.py",
         "src/chimera_my_chimera_plugin/controllers/__init__.py",
-        "src/chimera_my_chimera_plugin/controllers/my_chimera_plugin.py",
+        "src/chimera_my_chimera_plugin/controllers/mychimeraplugincontroller.py",
         "tests/__init__.py",
     ]
 
