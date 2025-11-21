@@ -104,6 +104,9 @@ wheels = [
 name = "chimera-template"
 version = "0.1.0"
 source = { virtual = "." }
+dependencies = [
+    { name = "cookiecutter" },
+]
 
 [package.optional-dependencies]
 dev = [
@@ -115,9 +118,9 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "build", marker = "extra == 'dev'", specifier = ">=1.0" },
+    { name = "cookiecutter", specifier = ">=2.6.0" },
     { name = "cookiecutter", marker = "extra == 'dev'", specifier = ">=2.6" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
-    { name = "tomli", marker = "python_full_version < '3.11' and extra == 'dev'", specifier = ">=2.0" },
 ]
 provides-extras = ["dev"]
 

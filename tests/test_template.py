@@ -2,7 +2,6 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 """Tests for the Chimera Cookiecutter template."""
 
-import os
 import shutil
 import subprocess
 from pathlib import Path
