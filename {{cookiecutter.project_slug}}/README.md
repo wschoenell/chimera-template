@@ -22,17 +22,17 @@ Add the following to your `chimera.config` file:
 
 {% if cookiecutter.include_instrument == "yes" %}
 ```yaml
-instrument:
-    name: {{ cookiecutter.project_slug }}
-    type: {{ cookiecutter.__instrument_class_name }}
+instruments:
+    - name: {{ cookiecutter.project_slug }}
+      type: {{ cookiecutter.__instrument_class_name }}
 ```
 {% endif %}
 
 {% if cookiecutter.include_controller == "yes" %}
 ```yaml
-controller:
-    name: {{ cookiecutter.project_slug }}
-    type: {{ cookiecutter.__controller_class_name }}
+controllers:
+    - name: {{ cookiecutter.project_slug }}
+      type: {{ cookiecutter.__controller_class_name }}
 ```
 {% endif %}
 

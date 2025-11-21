@@ -20,7 +20,7 @@ build-backend = "hatchling.build"
 packages = ["src/{{ cookiecutter.package_name }}"]
 
 [tool.ruff.lint]
-select = ["N802", "N803"]
+select = ["N", "I", "UP", "F"]
 
 [tool.ruff.lint.flake8-copyright]
 notice-rgx = "(?i)# SPDX-FileCopyrightText:\\s\\d{4}(-(\\d{4}|present))*"
