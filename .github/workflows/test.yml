@@ -35,4 +35,4 @@ jobs:
       - name: Test cookiecutter generation
         run: |
           cookiecutter . --no-input --output-dir /tmp/test-output
-          ls -la /tmp/test-output/chimera_my_chimera_plugin
+          ls -la /tmp/test-output/chimera-my-chimera-plugin
