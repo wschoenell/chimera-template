@@ -7,7 +7,5 @@ repos:
       # Run the linter.
       - id: ruff
         args: [--fix]
-        exclude: "{{cookiecutter.project_slug}}"
       # Run the formatter.
       - id: ruff-format
-        exclude: "{{cookiecutter.project_slug}}"

@@ -1,0 +1,20 @@
+{
+  "project_name": "My Chimera Plugin",
+  "project_slug": "chimera-{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
+  "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
+  "__module_name": "{{ cookiecutter.project_slug[8:].replace('-', '_') }}",
+  "project_short_description": "A Chimera observatory control system plugin",
+  "author_name": "Your Name",
+  "author_email": "your.email@example.com",
+  "github_username": "yourusername",
+  "version": "0.1.0",
+  "license": ["GPL-2.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"],
+  "python_version": "3.13",
+  "include_instrument": ["yes", "no"],
+  "include_controller": ["yes", "no"],
+  "__instrument_class_name": "{{ cookiecutter.project_slug[8:].split('-') | map('capitalize') | join('') }}Instrument",
+  "__controller_class_name": "{{ cookiecutter.project_slug[8:].split('-') | map('capitalize') | join('') }}Controller",
+  "__instrument_module_name": "{{ cookiecutter.project_slug[8:].replace('-', '').replace('_', '').lower() }}instrument",
+  "__controller_module_name": "{{ cookiecutter.project_slug[8:].replace('-', '').replace('_', '').lower() }}controller",
+  "year": "{% now 'utc', '%Y' %}"
+}

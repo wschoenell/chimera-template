@@ -45,3 +45,19 @@ doc.pdf
 
 .idea
 .noseids
+.history
+
+# Python cache
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+# uv
+uv.lock
+
+# Virtual environment
+.venv/
+
+# Cookiecutter test output
+test-output/
+tmp/
