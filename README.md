@@ -33,13 +33,13 @@ pip install cookiecutter
 ### Create a New Plugin
 
 ```bash
-cookiecutter gh:astroufsc/chimera-template
+uv tool run cookiecutter gh:astroufsc/chimera-template
 ```
 
 Or if you've cloned this repository locally:
 
 ```bash
-cookiecutter /path/to/chimera-template
+uv tool run cookiecutter /path/to/chimera-template
 ```
 
 ### Follow the Prompts
@@ -71,6 +71,28 @@ uv run pre-commit install --install-hooks
 git add .
 git commit -m "Initial commit"
 ```
+
+## Migrating an Existing Plugin
+
+If you have an existing Chimera plugin and want to adopt this template structure, the best approach is to set it up from scratch in the existing plugin directory:
+
+```bash
+# Navigate to your existing plugin directory
+cd /path/to/your-existing-plugin
+
+# Run cookiecutter to set up the template
+uv tool run cookiecutter gh:astroufsc/chimera-template
+```
+
+Cookiecutter will ask you questions about your plugin. Answer them according to your existing plugin's configuration. After generation, you can:
+
+1. Review the generated files in the new directory
+2. Manually merge your existing code into the new structure
+3. Adopt the modern `src/` layout
+4. Add pre-commit hooks and update to `pyproject.toml` configuration
+5. Integrate SPDX license headers and type hints
+
+This approach gives you full control over the migration process and allows you to selectively adopt new features while preserving your existing code.
 
 ## Project Structure
 
