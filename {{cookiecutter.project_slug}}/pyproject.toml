@@ -19,6 +19,10 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src/{{ cookiecutter.package_name }}"]
 
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
 [tool.ruff.lint]
 select = ["N", "I", "UP", "F"]
 
